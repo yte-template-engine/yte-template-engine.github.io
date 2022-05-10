@@ -33,22 +33,6 @@
     <!-- Meta -->
     <meta content="YTE - YAML template engine" property="og:title">
     <meta content="YTE is a template engine for YAML format that utilizes the YAML structure in combination with Python expressions for enabling to dynamically build YAML documents." name="description">
-
-    <!-- Initializer -->
-    <script>
-        $('[role~="flatdoc"]').on('flatdoc:ready', function() {
-            console.log("decorating markdown...")
-            $('pre:even:has(code.lang-yaml)').each(function(index, elem) {
-                $(elem).next().andSelf().wrapAll('<div class="example" />')
-            });
-            $('pre:even:has(code.lang-yaml)').wrap("<div />").prepend("<h4>Template</h4>");
-            $('pre:odd:has(code.lang-yaml)').wrap("<div />").prepend("<h4>Rendered</h4>");
-        });
-
-        Flatdoc.run({
-            fetcher: Flatdoc.github('koesterlab/yte', "docs/main.md")
-        });
-    </script>
 </head>
 
 <body role='flatdoc' class='no-literate'>
@@ -73,6 +57,21 @@
         </div>
         <div role='flatdoc-content' class='content'></div>
     </div>
+
+    <script>
+        $('[role~="flatdoc"]').on('flatdoc:ready', function() {
+            console.log("decorating markdown...")
+            $('pre:even:has(code.lang-yaml)').each(function(index, elem) {
+                $(elem).next().andSelf().wrapAll('<div class="example" />')
+            });
+            $('pre:even:has(code.lang-yaml)').wrap("<div />").prepend("<h4>Template</h4>");
+            $('pre:odd:has(code.lang-yaml)').wrap("<div />").prepend("<h4>Rendered</h4>");
+        });
+
+        Flatdoc.run({
+            fetcher: Flatdoc.github('koesterlab/yte', "docs/main.md")
+        });
+    </script>
 
 </body>
 
