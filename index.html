@@ -66,7 +66,11 @@
     </div>
 
     <script>
-        $('pre:even').next().andSelf().wrapAll('<div class="example" />');
+        $('pre:even:has(code.lang-yaml)').each(function(index, elem) {
+            $(elem).next().andSelf().wrapAll('<div class="example" />')
+        });
+        $('pre:even:has(code.lang-yaml)').wrap("<div />").prepend("<h4>Template</h4>");
+        $('pre:odd:has(code.lang-yaml)').wrap("<div />").prepend("<h4>Rendered</h4>");
     </script>
 
 </body>

@@ -1,0 +1,8 @@
+.example {
+    display: flex;
+    gap: 1em;
+}
+
+.example div {
+    flex-grow: 1;
+}
