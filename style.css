@@ -6,3 +6,12 @@
 .example div {
     flex-grow: 1;
 }
+
+@media (min-width: 768px) {
+    .menubar {
+        width: 300px !important;
+    }
+    .content-root {
+        padding-left: 300px !important;
+    }
+}
